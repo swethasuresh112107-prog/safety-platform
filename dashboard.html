@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard · GuardianVoice</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <div id="offline-banner" class="offline-banner" style="display:none;"></div>
+    <header class="topbar">
+      <div class="brand-mark">
+        <svg width="24" height="24" viewBox="0 0 28 28" fill="none">
+          <path d="M14 2 L25 6.5 V13 C25 20 20 25 14 26.5 C8 25 3 20 3 13 V6.5 Z" fill="#276E68"/>
+          <path d="M9 14 L12.5 17.5 L19 10" stroke="#F4F6F5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>GuardianVoice</span>
+      </div>
+      <nav class="topbar-nav">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="sos.html">SOS</a>
+        <a href="map.html">Map</a>
+        <a href="contacts.html">Contacts</a>
+        <a href="history.html">History</a>
+        <a href="incident.html">Report</a>
+      </nav>
+      <div class="user-chip">
+        <span class="status-dot" data-tracking-dot title="Background tracking"></span>
+        <span class="status-dot" data-listening-dot title="Voice listening"></span>
+        <span data-user-name style="font-size:13px; color:var(--slate);"></span>
+        <a href="settings.html" class="icon-btn" aria-label="Settings" style="text-decoration:none;">⚙</a>
+        <button data-logout>Sign out</button>
+      </div>
+    </header>
+
+    <main>
+      <div class="page-head">
+        <h1 id="greeting">Hi there, you're protected.</h1>
+        <span class="sub">Here's a quick look at your safety setup.</span>
+      </div>
+
+      <div class="stat-grid" id="stat-grid">
+        <div class="stat-card">
+          <div class="num" id="stat-contacts">—</div>
+          <div class="label">Trusted contacts</div>
+        </div>
+        <div class="stat-card">
+          <div class="num" id="stat-alerts">—</div>
+          <div class="label">Alerts sent all-time</div>
+        </div>
+        <div class="stat-card">
+          <div class="num" id="stat-last" style="font-size:18px;">—</div>
+          <div class="label">Last alert</div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-bottom:24px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;">
+        <div>
+          <h2 style="font-size:17px;">In an emergency</h2>
+          <p class="sub" style="margin-top:4px;">Hold the SOS button for two seconds to alert everyone on your list.</p>
+        </div>
+        <a href="sos.html" class="btn btn-danger" style="width:auto; padding:12px 28px;">Go to SOS</a>
+      </div>
+
+      <div class="card" style="margin-bottom:24px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;">
+        <div>
+          <h2 style="font-size:17px;">Need to look accompanied?</h2>
+          <p class="sub" style="margin-top:4px;">Start a fake incoming call, or set a spoken keyword for it in Settings.</p>
+        </div>
+        <button type="button" class="btn btn-ghost" style="width:auto; padding:12px 28px;" data-fake-call-btn>Start a fake call</button>
+      </div>
+
+      <div class="card" style="margin-bottom:24px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;">
+        <div>
+          <h2 style="font-size:17px;">Something happened, but it's not an emergency?</h2>
+          <p class="sub" style="margin-top:4px;">Log an incident report — it saves to your account, even offline.</p>
+        </div>
+        <a href="incident.html" class="btn btn-ghost" style="width:auto; padding:12px 28px;">Report an incident</a>
+      </div>
+
+      <h2 style="font-size:16px; margin-bottom:12px;">Recent activity</h2>
+      <div class="list" id="recent-activity">
+        <p class="sub">Loading…</p>
+      </div>
+    </main>
+
+    <nav class="mobile-nav">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="sos.html">SOS</a>
+      <a href="map.html">Map</a>
+      <a href="contacts.html">Contacts</a>
+      <a href="history.html">History</a>
+      <a href="incident.html">Report</a>
+    </nav>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

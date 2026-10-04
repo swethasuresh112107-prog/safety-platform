@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Map · GuardianVoice</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
+</head>
+<body>
+  <div class="app-shell">
+    <div id="offline-banner" class="offline-banner" style="display:none;"></div>
+    <header class="topbar">
+      <div class="brand-mark">
+        <svg width="24" height="24" viewBox="0 0 28 28" fill="none">
+          <path d="M14 2 L25 6.5 V13 C25 20 20 25 14 26.5 C8 25 3 20 3 13 V6.5 Z" fill="#276E68"/>
+          <path d="M9 14 L12.5 17.5 L19 10" stroke="#F4F6F5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>GuardianVoice</span>
+      </div>
+      <nav class="topbar-nav">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="sos.html">SOS</a>
+        <a href="map.html" class="active">Map</a>
+        <a href="contacts.html">Contacts</a>
+        <a href="history.html">History</a>
+        <a href="incident.html">Report</a>
+      </nav>
+      <div class="user-chip">
+        <span class="status-dot" data-tracking-dot title="Background tracking"></span>
+        <span class="status-dot" data-listening-dot title="Voice listening"></span>
+        <span data-user-name style="font-size:13px; color:var(--slate);"></span>
+        <a href="settings.html" class="icon-btn" aria-label="Settings" style="text-decoration:none;">⚙</a>
+        <button data-logout>Sign out</button>
+      </div>
+    </header>
+
+    <main>
+      <div class="page-head" style="display:flex; align-items:flex-start; justify-content:space-between; flex-wrap:wrap; gap:12px;">
+        <div>
+          <h1>Your location</h1>
+          <span class="sub">Live position and the nearest police, hospitals, and transport around you.</span>
+        </div>
+        <button type="button" class="btn btn-ghost" style="width:auto; padding:10px 18px;" id="map-refresh">Refresh</button>
+      </div>
+
+      <p id="map-msg" class="sub mb-24" style="display:none;"></p>
+
+      <div id="gv-map" class="gv-map card"></div>
+
+      <h2 style="font-size:16px; margin:24px 0 12px;">Nearby police stations</h2>
+      <div class="list" id="police-list">
+        <p class="sub">Finding your location…</p>
+      </div>
+
+      <h2 style="font-size:16px; margin:24px 0 12px;">Nearby hospitals</h2>
+      <div class="list" id="hospital-list">
+        <p class="sub">Finding your location…</p>
+      </div>
+
+      <h2 style="font-size:16px; margin:24px 0 12px;">Nearby transport</h2>
+      <div class="list" id="transport-list">
+        <p class="sub">Finding your location…</p>
+      </div>
+    </main>
+
+    <nav class="mobile-nav">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="sos.html">SOS</a>
+      <a href="map.html" class="active">Map</a>
+      <a href="contacts.html">Contacts</a>
+      <a href="history.html">History</a>
+      <a href="incident.html">Report</a>
+    </nav>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

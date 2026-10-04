@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Report an incident · GuardianVoice</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <div id="offline-banner" class="offline-banner" style="display:none;"></div>
+    <header class="topbar">
+      <div class="brand-mark">
+        <svg width="24" height="24" viewBox="0 0 28 28" fill="none">
+          <path d="M14 2 L25 6.5 V13 C25 20 20 25 14 26.5 C8 25 3 20 3 13 V6.5 Z" fill="#276E68"/>
+          <path d="M9 14 L12.5 17.5 L19 10" stroke="#F4F6F5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>GuardianVoice</span>
+      </div>
+      <nav class="topbar-nav">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="sos.html">SOS</a>
+        <a href="map.html">Map</a>
+        <a href="contacts.html">Contacts</a>
+        <a href="history.html">History</a>
+        <a href="incident.html" class="active">Report</a>
+      </nav>
+      <div class="user-chip">
+        <span class="status-dot" data-tracking-dot title="Background tracking"></span>
+        <span class="status-dot" data-listening-dot title="Voice listening"></span>
+        <span data-user-name style="font-size:13px; color:var(--slate);"></span>
+        <a href="settings.html" class="icon-btn" aria-label="Settings" style="text-decoration:none;">⚙</a>
+        <button data-logout>Sign out</button>
+      </div>
+    </header>
+
+    <main>
+      <div class="page-head">
+        <h1>Report an incident</h1>
+        <span class="sub">Log something that happened, even if it wasn't urgent enough for an SOS. Reports save here first and sync to your account automatically — including while you're offline.</span>
+      </div>
+
+      <div class="card mb-24">
+        <h2 style="font-size:15px; margin-bottom:16px;">New report</h2>
+        <div id="incident-msg" class="form-msg"></div>
+        <form id="incident-form" novalidate>
+          <div class="field">
+            <label for="incident-title">Title</label>
+            <input type="text" id="incident-title" placeholder="e.g. Followed near the bus stop" required>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="incident-category">Category</label>
+              <select id="incident-category">
+                <option value="HARASSMENT">Harassment</option>
+                <option value="THEFT">Theft</option>
+                <option value="ASSAULT">Assault</option>
+                <option value="SUSPICIOUS_ACTIVITY">Suspicious activity</option>
+                <option value="ACCIDENT">Accident</option>
+                <option value="UNSAFE_AREA">Unsafe area</option>
+                <option value="OTHER">Other</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="incident-occurred">When did it happen?</label>
+              <input type="datetime-local" id="incident-occurred">
+            </div>
+          </div>
+          <div class="field">
+            <label for="incident-description">What happened</label>
+            <textarea id="incident-description" rows="4" placeholder="Add as much detail as you're comfortable sharing." required></textarea>
+          </div>
+          <div class="field">
+            <label for="incident-address">Location (optional)</label>
+            <input type="text" id="incident-address" placeholder="Street, landmark, or area">
+          </div>
+          <div class="field-row" style="align-items:center;">
+            <button type="button" class="btn btn-ghost" id="incident-use-location" style="width:auto; padding:11px 20px;">
+              📍 Attach my current location
+            </button>
+            <span class="sub" id="incident-location-status"></span>
+          </div>
+          <button type="submit" class="btn btn-primary mt-24" style="width:auto; padding:11px 24px;">Submit report</button>
+        </form>
+      </div>
+
+      <h2 style="font-size:16px; margin-bottom:12px;">Your reports</h2>
+      <div class="list" id="incident-list">
+        <p class="sub">Loading…</p>
+      </div>
+    </main>
+
+    <nav class="mobile-nav">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="sos.html">SOS</a>
+      <a href="map.html">Map</a>
+      <a href="contacts.html">Contacts</a>
+      <a href="history.html">History</a>
+      <a href="incident.html" class="active">Report</a>
+    </nav>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

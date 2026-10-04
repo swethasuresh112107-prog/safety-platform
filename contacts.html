@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contacts · GuardianVoice</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <div id="offline-banner" class="offline-banner" style="display:none;"></div>
+    <header class="topbar">
+      <div class="brand-mark">
+        <svg width="24" height="24" viewBox="0 0 28 28" fill="none">
+          <path d="M14 2 L25 6.5 V13 C25 20 20 25 14 26.5 C8 25 3 20 3 13 V6.5 Z" fill="#276E68"/>
+          <path d="M9 14 L12.5 17.5 L19 10" stroke="#F4F6F5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>GuardianVoice</span>
+      </div>
+      <nav class="topbar-nav">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="sos.html">SOS</a>
+        <a href="map.html">Map</a>
+        <a href="contacts.html">Contacts</a>
+        <a href="history.html">History</a>
+        <a href="incident.html">Report</a>
+      </nav>
+      <div class="user-chip">
+        <span class="status-dot" data-tracking-dot title="Background tracking"></span>
+        <span class="status-dot" data-listening-dot title="Voice listening"></span>
+        <span data-user-name style="font-size:13px; color:var(--slate);"></span>
+        <a href="settings.html" class="icon-btn" aria-label="Settings" style="text-decoration:none;">⚙</a>
+        <button data-logout>Sign out</button>
+      </div>
+    </header>
+
+    <main>
+      <div class="page-head">
+        <h1>Trusted contacts</h1>
+        <span class="sub">Everyone here is notified the moment you send an alert.</span>
+      </div>
+
+      <div class="card mb-24">
+        <h2 style="font-size:15px; margin-bottom:16px;">Add a contact</h2>
+        <div id="contact-msg" class="form-msg"></div>
+        <form id="contact-form" novalidate>
+          <div class="field-row">
+            <div class="field">
+              <label for="contact-name">Name</label>
+              <input type="text" id="contact-name" required>
+            </div>
+            <div class="field">
+              <label for="contact-phone">Phone</label>
+              <input type="tel" id="contact-phone" required>
+            </div>
+          </div>
+          <div class="field">
+            <label for="contact-relation">Relationship</label>
+            <input type="text" id="contact-relation" placeholder="e.g. Sister, Roommate, Neighbor">
+          </div>
+          <label class="checkline">
+            <input type="checkbox" id="contact-primary">
+            Notify first, before other contacts
+          </label>
+          <button type="submit" class="btn btn-primary" style="width:auto; padding:11px 24px;">Add contact</button>
+        </form>
+      </div>
+
+      <h2 style="font-size:16px; margin-bottom:12px;">Your list</h2>
+      <div class="list" id="contacts-list">
+        <p class="sub">Loading…</p>
+      </div>
+    </main>
+
+    <nav class="mobile-nav">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="sos.html">SOS</a>
+      <a href="map.html">Map</a>
+      <a href="contacts.html" class="active">Contacts</a>
+      <a href="history.html">History</a>
+      <a href="incident.html">Report</a>
+    </nav>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

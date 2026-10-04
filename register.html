@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create account · GuardianVoice</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="auth-shell">
+    <div class="auth-panel-brand">
+      <div class="brand-mark">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+          <path d="M14 2 L25 6.5 V13 C25 20 20 25 14 26.5 C8 25 3 20 3 13 V6.5 Z" fill="#276E68"/>
+          <path d="M9 14 L12.5 17.5 L19 10" stroke="#F4F6F5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span style="color:#F4F6F5; font-family:'Fraunces',serif; font-weight:600; font-size:17px;">GuardianVoice</span>
+      </div>
+      <p class="tagline">Set it up once. It's ready every time after that.</p>
+      <p class="fineprint">Takes under a minute. You can add your trusted contacts right after.</p>
+    </div>
+    <div class="auth-panel-form">
+      <div class="auth-card">
+        <h1>Create your account</h1>
+        <span class="sub">A few details and you're set up.</span>
+
+        <div id="register-msg" class="form-msg"></div>
+
+        <form id="register-form" novalidate>
+          <div class="field">
+            <label for="name">Full name</label>
+            <input type="text" id="name" name="name" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label for="phone">Phone number</label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel" required>
+            <span class="hint">Used so your contacts can identify who the alert is from.</span>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="password">Password</label>
+              <input type="password" id="password" name="password" autocomplete="new-password" minlength="8" required>
+            </div>
+            <div class="field">
+              <label for="confirm-password">Confirm</label>
+              <input type="password" id="confirm-password" name="confirm-password" autocomplete="new-password" minlength="8" required>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Create account</button>
+        </form>
+
+        <p class="form-foot">Already have an account? <a href="login.html">Sign in</a></p>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

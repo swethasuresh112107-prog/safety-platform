@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign in · GuardianVoice</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="auth-shell">
+    <div class="auth-panel-brand">
+      <div class="brand-mark">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+          <path d="M14 2 L25 6.5 V13 C25 20 20 25 14 26.5 C8 25 3 20 3 13 V6.5 Z" fill="#276E68"/>
+          <path d="M9 14 L12.5 17.5 L19 10" stroke="#F4F6F5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span style="color:#F4F6F5; font-family:'Fraunces',serif; font-weight:600; font-size:17px;">GuardianVoice</span>
+      </div>
+      <p class="tagline">One hold of a button reaches everyone you trust.</p>
+      <p class="fineprint">Your account keeps your emergency contacts and alert history in one place, ready the moment you need it.</p>
+    </div>
+    <div class="auth-panel-form">
+      <div class="auth-card">
+        <h1>Welcome back</h1>
+        <span class="sub">Sign in to reach your trusted contacts.</span>
+
+        <div id="login-msg" class="form-msg"></div>
+
+        <form id="login-form" novalidate>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" autocomplete="current-password" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Sign in</button>
+        </form>
+
+        <p class="form-foot">New to GuardianVoice? <a href="register.html">Create an account</a></p>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

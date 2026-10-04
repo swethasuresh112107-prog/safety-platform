@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Settings · GuardianVoice</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <div id="offline-banner" class="offline-banner" style="display:none;"></div>
+    <header class="topbar">
+      <div class="brand-mark">
+        <svg width="24" height="24" viewBox="0 0 28 28" fill="none">
+          <path d="M14 2 L25 6.5 V13 C25 20 20 25 14 26.5 C8 25 3 20 3 13 V6.5 Z" fill="#276E68"/>
+          <path d="M9 14 L12.5 17.5 L19 10" stroke="#F4F6F5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>GuardianVoice</span>
+      </div>
+      <nav class="topbar-nav">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="sos.html">SOS</a>
+        <a href="map.html">Map</a>
+        <a href="contacts.html">Contacts</a>
+        <a href="history.html">History</a>
+        <a href="incident.html">Report</a>
+      </nav>
+      <div class="user-chip">
+        <span class="status-dot" data-tracking-dot title="Background tracking"></span>
+        <span class="status-dot" data-listening-dot title="Voice listening"></span>
+        <span data-user-name style="font-size:13px; color:var(--slate);"></span>
+        <a href="settings.html" class="icon-btn" aria-label="Settings" style="text-decoration:none;">⚙</a>
+        <button data-logout>Sign out</button>
+      </div>
+    </header>
+
+    <main style="max-width:560px;">
+      <div class="page-head">
+        <h1>Guardian settings</h1>
+        <span class="sub">Set up keywords, fake-call details, and tracking.</span>
+      </div>
+
+      <div id="settings-support-warning" class="form-msg error" style="display:none;"></div>
+
+      <form id="settings-form">
+        <div class="card mb-24">
+          <h2 style="font-size:15px; margin-bottom:4px;">Voice keywords</h2>
+          <p class="sub" style="margin-bottom:18px;">
+            Works only while GuardianVoice is open in your browser tab and microphone
+            access is allowed — it can't listen while your phone is locked or the tab
+            is closed. Speak naturally; matching is a simple contains-check on what
+            the browser hears.
+          </p>
+
+          <div class="field">
+            <label for="setting-sos-keyword">SOS keyword</label>
+            <input type="text" id="setting-sos-keyword" placeholder="e.g. guardian help">
+            <span class="hint">Saying this opens the SOS page and sends the alert after a
+              3-second countdown you can cancel.</span>
+          </div>
+
+          <div class="field">
+            <label for="setting-fakecall-keyword">Fake-call keyword</label>
+            <input type="text" id="setting-fakecall-keyword" placeholder="e.g. mango">
+            <span class="hint">Saying this starts a fake incoming call immediately, from any page.</span>
+          </div>
+
+          <label class="checkline">
+            <input type="checkbox" id="setting-listen-enabled">
+            Enable voice listening on this device
+          </label>
+        </div>
+
+        <div class="card mb-24">
+          <h2 style="font-size:15px; margin-bottom:4px;">Fake call</h2>
+          <p class="sub" style="margin-bottom:18px;">Who should appear to be calling you.</p>
+          <div class="field">
+            <label for="setting-caller-name">Caller name</label>
+            <input type="text" id="setting-caller-name" placeholder="e.g. Amma">
+          </div>
+        </div>
+
+        <div class="card mb-24">
+          <h2 style="font-size:15px; margin-bottom:4px;">Location tracking</h2>
+          <p class="sub" style="margin-bottom:18px;">
+            Keeps your last known location fresh in the background while this tab is
+            open, so an SOS or map lookup doesn't have to wait on a fresh GPS fix.
+            This stops if you close the tab or your phone locks — it is not a true
+            always-on background service.
+          </p>
+          <label class="checkline">
+            <input type="checkbox" id="setting-tracking-enabled">
+            Enable continuous tracking on this device
+          </label>
+        </div>
+
+        <div id="settings-msg" class="form-msg"></div>
+        <button type="submit" class="btn btn-primary">Save settings</button>
+      </form>
+    </main>
+
+    <nav class="mobile-nav">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="sos.html">SOS</a>
+      <a href="map.html">Map</a>
+      <a href="contacts.html">Contacts</a>
+      <a href="history.html">History</a>
+      <a href="incident.html">Report</a>
+    </nav>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
